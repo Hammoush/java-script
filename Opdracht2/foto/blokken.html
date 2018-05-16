@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <title>Stijlen aanpassen</title>
+    <style>
+        html {
+            padding:0px;
+            margin:0px;
+        }
+        body {
+            padding:0px;
+            margin:0px;
+            background-color: aliceblue;
+        }
+        div {
+            box-sizing: border-box;
+            height: 100px;
+            width: 100px;
+            background-color:yellow;
+            float: left;
+        }
+    </style>
+
+</head>
+<body>
+<div id="alo">Blokje 1</div>
+<div id="alo1">Blokje 2</div>
+<div id="alo2">Blokje 3</div>
+<div id="alo3">Blokje 4</div>
+<!--<div>Blokje 2</div>
+<div>Blokje 3</div>
+<div>Blokje 4</div>-->
+<script >document.getElementById("alo").style.backgroundColor = "aqua";
+document.getElementById("alo1").style.backgroundColor = "green";
+document.getElementById("alo1").style.marginTop = "25px";
+document.getElementById("alo2").style.backgroundColor = "yellow";
+document.getElementById("alo2").style.marginTop = "50px";
+document.getElementById("alo3").style.backgroundColor = "red";</script>
+</body>
+</html>

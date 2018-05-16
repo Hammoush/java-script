@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>hoi3 java script</title>
+</head>
+<style>
+    img{
+        border: 0px;
+    }
+    #www{
+        width: 750px;
+        font-size: 0px;
+        border: solid 1px;
+        margin: auto;
+    }
+    h1{margin-left: 300px;}
+</style>
+
+<body>
+    <h1>Modern van de haar</h1>
+
+    <div id="www">
+        <img src="foto/alo1.jpg">
+        <img src="foto/alo2.jpg">
+        <img src="foto/alo3.jpg">
+        <img src="foto/alo4.jpg">
+        <img src="foto/alo5.jpg">
+        <img src="foto/alo6.jpg">
+        <img src="foto/alo7.jpg">
+        <img src="foto/alo8.jpg">
+        <img src="foto/alo9.jpg">
+    </div>
+
+<script >
+
+
+
+
+    var  plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+    var randomNumbers = [];
+    while ( randomNumbers.length < 9) {
+        random = Math.floor(Math.random() * 9) + 1;
+        if (randomNumbers.lastIndexOf(random) == -1) {
+            randomNumbers.push(random);
+        }
+    }
+    random = 0;
+    for (var plaatje in plaatjes) {
+        plaatjes[plaatje].src="./foto/alo" + randomNumbers[random] + ".jpg";
+        random++;
+    }
+    /* for (var i = 0; i < plaatjes.length; i++) {
+         random = Math.floor(Math.random()*9)+1;
+         plaatjes[i].src = "img/aap" + random + ".jpg"
+     }
+ */
+
+
+
+
+
+  /*  var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+    var randomNumbers =[];
+    while (randomNumbers.length < 9) {
+        random = math.floor(math.random() * 9) + 1;
+        if (randomNumbers.lastIndexOf(random) == -1) {
+            randomNumbers.push(random);
+        }
+    }
+     random = 0
+        for (var plaatje in plaatjes){
+         plaatjes[plaatje].src ="../foto/alo" + randomNumbers[random]+".jpg";
+        random ++;
+    }*/
+</script>
+</body>
+</html>

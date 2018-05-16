@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>hoi3 java script</title>
+
+<style>
+    body{
+        text-align: center;
+        font-family: 'Copse',serif;
+    }
+
+
+    div.picture-holder{
+        height: 400px;
+        width: 250px;
+        float: left;
+        background-color: red;
+        border: 1px solid black;
+    }
+    div.favoriet{
+        width: 250px;
+        height: 170px;
+        background-color: blue;
+
+    }
+    #pics{
+        width: 756px;
+        height: 1200px;
+        font-size: 0px;
+        border: solid 1px black;
+        margin: auto;
+    }
+
+</style>
+</head>
+    <body>
+        <h1>Modern van de haar</h1>
+        <h3>choose yer favorite haar</h3>
+
+        <div id="pics">
+
+        </div>
+    <script>
+     pics = document.getElementById("pics");
+    createPicsHolders();
+    createAloImages();
+    function createPicsHolders() {
+        for(var i = 0; i<9; i++){
+            pictureHolder = document.createElement("div");
+            pictureHolder.className = "picture-holder";
+            pictureHolder.id = "picture-holder-"+i;
+            pics.appendChild(pictureHolder);
+        }
+
+    }
+    function createAloImages() {
+        pictureHolder = document.getElementsByClassName("picture-holder");
+        for (var i =0; i<pictureHolder.length; i++){
+            favriet = document.createElement("div");
+            favriet.className = "favoriet";
+            favriet.id ="favoriet_"+ (i +1);
+            aloplaatje =document.createElement("img");
+            aloplaatje.src ="foto/alo" + (i+1) + ".jpg"
+            aloplaatje.id = (i +1);
+            aloplaatje.addEventListener("click", function(){
+                maakFavoriet(this.id);
+            });
+            pictureHolder[i].appendChild(favriet);
+            pictureHolder[i].appendChild(aloplaatje);
+        }
+    }
+        function maakFavoriet (id) {
+          console.log ("maak mij favoriet! Het gaat om Haar" +id);
+            notsofavoriet = document.getElementsByClassName("favoriet");
+            for(var i =0; i< notsofavoriet.length; i++){
+                notsofavoriet[i].style.backgroundImage ="none"
+            }
+
+
+
+          favriet = document.getElementById("favoriet_" + id);
+          favriet.style.backgroundImage = "url('foto/heart.png')";
+        }
+
+
+
+    </script>
+
+    </body>
+</html>
